@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+<title>Code Runner</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-8">
+  <div class="max-w-4xl mx-auto"></div>
+  <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">Code Runner</h1>
+
+  <form action="/run" method="POST" class="space-y-6">
+    <div>
+      <textarea name="code" rows="10" placeholder="Write Python code here..."
+        class="w-full p-4 bg-white border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 font-mono"></textarea>
+    </div>
+
+    <div>
+      <textarea name="input" rows="5" placeholder="Your input..."
+        class="w-full p-4 bg-white border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+    </div>
+
+    <button type="submit"
+      class="w-full py-3 px-6 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200">
+      Run Code
+    </button>
+  </form>
+
+  <% if (output) { %>
+    <div class="mt-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Output:</h2>
+      <pre class="bg-white p-4 rounded-lg shadow-sm overflow-x-auto font-mono"><%= output %></pre>
+    </div>
+    <% } %>
+      </div>
+</body>
+
+</html>
